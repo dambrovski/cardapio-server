@@ -20,8 +20,9 @@ public class FuncoesWS {
 
 	@WebMethod(operationName = "login_usuario")
 	@WebResult(name = "login_usuario_resultado")
-	public String getMessageLogin() {
+	public boolean getMessageLogin() {
 
+		Boolean verificado = false;
 		MessageContext mctx = wsctx.getMessageContext();
 
 		Map http_headers = (Map) mctx.get(MessageContext.HTTP_REQUEST_HEADERS);
@@ -41,9 +42,11 @@ public class FuncoesWS {
 		}
 
 		if (username.equals("admin") && password.equals("admin123")) {
-			return "Ola¡ " + username + " bem vindo ao login SOAP.";
+			verificado = true;
+			return verificado;
 		} else {
-			return " Usuario invalido";
+			verificado = false;
+			return verificado;
 		}
 
 	}
