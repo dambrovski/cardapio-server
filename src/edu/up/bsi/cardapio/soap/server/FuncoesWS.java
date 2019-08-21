@@ -34,18 +34,29 @@ public class FuncoesWS {
 
 		if (userList != null) {
 			username = userList.get(0);
+
 		}
 
 		if (passList != null) {
 			password = passList.get(0);
+
 
 		}
 
 		if (username.equals("admin") && password.equals("admin123")) {
 			verificado = true;
 			return verificado;
-		} else {
-			verificado = false;
+		}
+		else if (username.equals("airton") && password.equals("1234")) {
+			verificado = true;
+			return verificado;
+		}
+		else if (username.equals("root") && password.equals("toor")) {
+			verificado = true;
+			return verificado;
+		}
+		else {
+			
 			return verificado;
 		}
 
