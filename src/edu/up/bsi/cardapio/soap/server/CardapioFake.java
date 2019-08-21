@@ -11,11 +11,11 @@ public class CardapioFake {
 		
 		ArrayList<AlimentoCardapio> lista_alimentos = new  ArrayList<AlimentoCardapio>();
 		
-		lista_alimentos.add(new AlimentoCardapio(10, "X-SALADA"));
+		lista_alimentos.add(new AlimentoCardapio(10, "X-BLZ"));
 		lista_alimentos.add(new AlimentoCardapio(15, "X-ALL"));
 		lista_alimentos.add(new AlimentoCardapio(12, "X-MEN"));
 		lista_alimentos.add(new AlimentoCardapio(5, "X-PÃO"));
-		lista_alimentos.add(new AlimentoCardapio(30, "X-LARICA"));
+		lista_alimentos.add(new AlimentoCardapio(30, "X-LAG"));
 
 		return lista_alimentos;
 				

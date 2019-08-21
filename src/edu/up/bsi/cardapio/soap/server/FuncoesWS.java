@@ -17,6 +17,7 @@ public class FuncoesWS {
 
 	@Resource
 	WebServiceContext wsctx;
+	private CardapioFake dao = new CardapioFake();
 
 	@WebMethod(operationName = "login_usuario")
 	@WebResult(name = "login_usuario_resultado")
@@ -40,29 +41,45 @@ public class FuncoesWS {
 		if (passList != null) {
 			password = passList.get(0);
 
-
 		}
 
 		if (username.equals("admin") && password.equals("admin123")) {
 			verificado = true;
 			return verificado;
-		}
-		else if (username.equals("airton") && password.equals("1234")) {
+		} else if (username.equals("airton") && password.equals("1234")) {
 			verificado = true;
 			return verificado;
-		}
-		else if (username.equals("root") && password.equals("toor")) {
+		} else if (username.equals("root") && password.equals("toor")) {
 			verificado = true;
 			return verificado;
-		}
-		else {
-			
+		} else {
+
 			return verificado;
 		}
 
 	}
 
-	private CardapioFake dao = new CardapioFake();
+	@WebMethod(operationName = "um_alimento")
+	@WebResult(name = "um_alimento_resultado")
+
+	public String getOne(int codigoLanche) {
+
+		ArrayList<AlimentoCardapio> cardapio = new ArrayList<AlimentoCardapio>();
+		cardapio = dao.getAllAlimentos();
+		String alimentoSelecionado = "Alimento não encontrado!";
+
+		for (AlimentoCardapio alimentoCardapio : cardapio) {
+
+			if (cardapio.indexOf(alimentoCardapio) == codigoLanche) {
+
+				alimentoSelecionado = "Código: " + codigoLanche + " | Lanche: " + alimentoCardapio.getDescricao()
+						+ " | Preço: R$" + alimentoCardapio.getpreco();
+			}
+		}
+
+		return alimentoSelecionado;
+
+	}
 
 	@WebMethod(operationName = "todos_alimentos")
 	@WebResult(name = "todos_alimentos_resultado")
