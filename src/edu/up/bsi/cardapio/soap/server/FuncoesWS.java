@@ -1,5 +1,6 @@
 package edu.up.bsi.cardapio.soap.server;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -18,6 +19,8 @@ public class FuncoesWS {
 	@Resource
 	WebServiceContext wsctx;
 	private CardapioFake dao = new CardapioFake();
+	private DadoFake dao2 = new DadoFake();
+	private DateTime dao3 = new DateTime();
 
 	@WebMethod(operationName = "login_usuario")
 	@WebResult(name = "login_usuario_resultado")
@@ -92,4 +95,26 @@ public class FuncoesWS {
 
 	}
 
+	@WebMethod(operationName = "dados_empresa")
+	@WebResult(name = "dados_empresa_resultado")
+
+	public ArrayList<DadosEmpresa> getDados() {
+
+		ArrayList<DadosEmpresa> dados = new ArrayList<DadosEmpresa>();
+		dados = dao2.getDados();
+		return dados;
+
+	}
+	
+	@WebMethod(operationName = "hora_atual")
+	@WebResult(name = "hora_atual_resultado")
+
+	public Date dataAtual() {
+
+		DateTime data = new DateTime();
+		data.getDataAtual();
+		dados = dao2.getDados();
+		return data;
+
+	}
 }
