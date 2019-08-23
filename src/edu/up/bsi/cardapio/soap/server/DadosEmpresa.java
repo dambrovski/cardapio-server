@@ -7,9 +7,6 @@ public class DadosEmpresa {
 	private String cnpj;
 	private String telefone;
 
-	public DadosEmpresa() {
-
-	}
 
 	public DadosEmpresa(String fantasia, String razaoSocial, String cnpj, String telefone) {
 		setFantasia(fantasia);
