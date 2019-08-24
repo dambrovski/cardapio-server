@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 
-	@XmlRootElement // represena o elemento principal, ou a tag principal, do XML
+	@XmlRootElement // representa o elemento principal, ou a tag principal, do XML
 	@XmlAccessorType(XmlAccessType.FIELD) // define onde as anotações JAXB devem ser interpretadas, nos métodos ou
 											// atributos.
 	public class ListarEmpresa {

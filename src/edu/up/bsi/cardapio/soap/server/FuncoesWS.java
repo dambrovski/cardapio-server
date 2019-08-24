@@ -1,6 +1,5 @@
 package edu.up.bsi.cardapio.soap.server;
 
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -22,7 +21,6 @@ public class FuncoesWS {
 	WebServiceContext wsctx;
 	private CardapioFake dao = new CardapioFake();
 	private DadoFake dao2 = new DadoFake();
-
 
 	@WebMethod(operationName = "login_usuario")
 	@WebResult(name = "login_usuario_resultado")
@@ -97,25 +95,23 @@ public class FuncoesWS {
 
 	}
 
-	//@WebMethod(operationName = "dados_empresa")
-	//@WebResult(name = "dados_empresa_resultado")
+	@WebMethod(operationName = "dados_empresa")
+	@WebResult(name = "dados_empresa_resultado")
 
-//	public ArrayList<DadosEmpresa> getDadoss() {
+	public String getDadoss(String dados) {
 
-	//	ArrayList<DadosEmpresa> dados = new ArrayList<DadosEmpresa>();
-	//	dados = dao2.getDados();
-	//	return dados;
+		dados = dao2.getDados();
+		return dados;
 
-	//}
-	
+	}
+
 	@WebMethod(operationName = "hora_atual")
 	@WebResult(name = "hora_atual_resultado")
 
-	public SimpleDateFormat data (Date data) {		
+	public SimpleDateFormat data(Date data) {
 		Date d = new Date();
 		SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
 		formatador.format(data);
-
 
 		return formatador;
 	}
