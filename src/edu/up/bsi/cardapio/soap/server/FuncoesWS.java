@@ -105,7 +105,7 @@ public class FuncoesWS {
 
 	}
 
-	@SuppressWarnings("deprecation")
+	
 	@WebMethod(operationName = "hora_atual")
 	@WebResult(name = "hora_atual_resultado")
 
