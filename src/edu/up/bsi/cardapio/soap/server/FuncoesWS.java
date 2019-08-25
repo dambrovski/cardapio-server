@@ -105,14 +105,18 @@ public class FuncoesWS {
 
 	}
 
+	@SuppressWarnings("deprecation")
 	@WebMethod(operationName = "hora_atual")
 	@WebResult(name = "hora_atual_resultado")
 
-	public SimpleDateFormat data(Date data) {
+	public Date data() {
 		Date d = new Date();
-		SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
-		formatador.format(data);
+	
+		Date hora = new Date();
+		hora.getTime();
 
-		return formatador;
+		
+
+		return hora;
 	}
 }
